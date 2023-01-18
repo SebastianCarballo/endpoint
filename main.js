@@ -21,7 +21,9 @@ app.use(connectLivereload());
 app.get('/', function (req, res) {
     res.send("Provando en EndPoint!!")
 })
-app.get('/endpoint', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'index.html')));
+app.get('/index', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'index.html')));
+app.get('/endpoint', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'endpoint.html')));
+
 
 /* Funcion de actualizacion del servidor */
 liveReloadServer.server.once("connection",() => {

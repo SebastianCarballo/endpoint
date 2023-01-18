@@ -18,7 +18,10 @@ liveReloadServer.watch(path.join(__dirname,'public'));
 app.use(connectLivereload());
 
 /* Rutas */
-app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'index.html')));
+app.get('/', function (req, res) {
+    res.send("Provando en EndPoint!!")
+})
+app.get('/endpoint', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'index.html')));
 
 /* Funcion de actualizacion del servidor */
 liveReloadServer.server.once("connection",() => {
